@@ -6,7 +6,6 @@ SPECTRUM_NEUTRAL = "neutral"
 
 
 class Lamp:
-    """Базовый класс для ламп."""
 
     def __init__(self, emission_power, energy_consumption, lifespan):
         self.emission_power = emission_power
@@ -14,16 +13,13 @@ class Lamp:
         self.lifespan = lifespan
 
     def days_until_burnout(self, hours_per_day=DEFAULT_HOURS_PER_DAY):
-        """Возвращает количество дней до перегорания лампы."""
         return self.lifespan / hours_per_day
 
     def power_to_consumption_ratio(self):
-        """Возвращает соотношение излучаемой мощности к потребляемой."""
         return self.emission_power / self.energy_consumption
 
 
 class DaylightLamp(Lamp):
-    """Лампа дневного света с указанием типа спектра."""
 
     def __init__(self, emission_power, energy_consumption, lifespan, spectrum_type):
         super().__init__(emission_power, energy_consumption, lifespan)
@@ -31,7 +27,6 @@ class DaylightLamp(Lamp):
 
  
 class Floodlight(Lamp):
-    """Прожектор с указанием угла раскрытия луча."""
 
     def __init__(self, emission_power, energy_consumption, lifespan, beam_angle):
         super().__init__(emission_power, energy_consumption, lifespan)
@@ -53,4 +48,5 @@ if __name__ == '__main__':
     floodlight = Floodlight(500, 550, 3000, 120)
     print(f"Прожектор перегорит через {floodlight.days_until_burnout()} дней.")
     print(f"Соотношение мощности к потреблению для прожектора: "
+
           f"{floodlight.power_to_consumption_ratio():.2f}")
