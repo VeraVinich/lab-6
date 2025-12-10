@@ -1,9 +1,5 @@
 DEFAULT_HOURS_PER_DAY = 8
 
-SPECTRUM_WARM = "warm"
-SPECTRUM_COOL = "cool"
-SPECTRUM_NEUTRAL = "neutral"
-
 LAMP_EMISSION_POWER = 60
 LAMP_ENERGY_CONSUMPTION = 60
 LAMP_LIFESPAN = 2000
@@ -57,7 +53,7 @@ if __name__ == '__main__':
         DAYLIGHT_LAMP_EMISSION_POWER,
         DAYLIGHT_LAMP_ENERGY_CONSUMPTION,
         DAYLIGHT_LAMP_LIFESPAN,
-        SPECTRUM_WARM)
+        "warm")
     
     print(f"Лампа дневного света перегорит через {daylight_lamp.days_until_burnout()} дней.")
     print(f"Соотношение мощности к потреблению для лампы дневного света: "
@@ -72,3 +68,4 @@ if __name__ == '__main__':
     print(f"Прожектор перегорит через {floodlight.days_until_burnout()} дней.")
     print(f"Соотношение мощности к потреблению для прожектора: "
           f"{floodlight.power_to_consumption_ratio():.2f}")
+
